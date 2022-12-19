@@ -15,7 +15,7 @@ class Post
   end
   
   # Создадим статический метод create который будет выволнять динамическое создание объекта нужного класса из набора возможных детей.
-  def self.create(type, index)
+  def self.create(type_index)
     return post_types[type_index].new
   end
   
@@ -43,7 +43,7 @@ class Post
     # В переменной file_path сохраним место, откуда запустили программу.
     current_path = File.dirname(__File__)
     # Получим имя файла из даты создания поста метод strftime
-    file_name = @create_at.strftime("#{self.class.name}_%Y-%m-%d_%H-%M-%S.txt")
+    file_name = @created_at.strftime("#{self.class.name}_%Y-%m-%d_%H-%M-%S.txt")
     return current_path + "/" + file_name
   end
 end
