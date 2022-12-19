@@ -24,7 +24,7 @@ class Task < Post
   # Массив из трех строк: дедлайн, описание, дата создания
   def save 
     file = File.new(file_path, "w:UTF-8")
-    time_string = @create_at.strftime("%Y.%m.%d, %H:%M")
+    time_string = @created_at.strftime("%Y.%m.%d, %H:%M")
     file.puts(time_string + "\n\r")
 
     # Так как поле @due_date указывает на объект класса Date, мы можем вызвать метод strftime
