@@ -19,7 +19,7 @@ class Link < Post
   def save
     # Метод save во многом повторяет метод родителя, но отличается существенно
     file = File.new(file_path, "w:UTF-8")
-    time_string = @create_at.strftime("%Y.%m.%d, %H:%M")
+    time_string = @created_at.strftime("%Y.%m.%d, %H:%M")
     file.puts(time_string + "\n\r")
     # Помимо текста мы еще сохраняем в файл фдрес ссылки.
     file.puts(@url)
