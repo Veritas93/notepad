@@ -26,7 +26,7 @@ class Memo < Post
 
       # Сперва запишем дату и время записи и сделаем отступ
       # \r - специальный дополнительный символ конца строки
-      time_string = create_at.strftime("%Y.%m.%d, %H:%M")
+      time_string = created_at.strftime("%Y.%m.%d, %H:%M")
       file.puts(time_string + "\n\r")
 
       # В цикле запишем в файл строчку за строчкой массив @text
